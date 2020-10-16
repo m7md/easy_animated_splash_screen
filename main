@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,20 +11,24 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Icons.shopping_cart,
         nextScreen: HomePage(),
-        splashTransition: SplashTransition.scaleTransition,
-        ),
-      );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Hello Home Page"),
+        splashTransition: SplashTransition.rotationTransition,
       ),
     );
   }
 }
 
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        "Home Screen"
+      ),
+    );
+  }
+}
